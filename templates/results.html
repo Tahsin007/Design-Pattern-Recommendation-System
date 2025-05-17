@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-project-diagram"></i> Recommendation Results</h1>
+            <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Back to input</a>
+        </header>
+        
+        <main>
+            <div class="problem-section">
+                <h2>Your Problem:</h2>
+                <p>{{ results.problem }}</p>
+            </div>
+            
+            <div class="recommendations">
+                <div class="recommendation-card top1">
+                    <div class="card-header">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Top Recommendation</h3>
+                    </div>
+                    <div class="card-body">
+                        <h4>{{ results.top1_recommendation }}</h4>
+                        <p>The system strongly recommends this pattern as the best solution to your problem.</p>
+                    </div>
+                </div>
+                
+                <div class="recommendation-card top3">
+                    <div class="card-header">
+                        <i class="fas fa-medal"></i>
+                        <h3>Alternative Recommendations</h3>
+                    </div>
+                    <div class="card-body">
+                        <ol>
+                            {% for pattern in results.top3_recommendations %}
+                                <li>{{ pattern }}</li>
+                            {% endfor %}
+                        </ol>
+                        <p>These patterns might also be suitable for your problem.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="class-diagram">
+                <h3>Class Diagram for {{ results.top1_recommendation }} Pattern</h3>
+                <div class="diagram-container">
+                    {{ results.diagram | safe }}
+                </div>
+            </div>
+
+            <div class="processing-info">
+                <p><i class="fas fa-clock"></i> Processed in {{ results.processing_time }}</p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Design Pattern Recommendation System using SBERT with Reranking</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Pattern Recommender</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-project-diagram"></i> Design Pattern Recommender</h1>
+            <p>Describe your software design problem and get recommendations for appropriate design patterns</p>
+        </header>
+        
+        <main>
+            <form id="recommendation-form" action="/recommend" method="POST">
+                <div class="form-group">
+                    <label for="problem">Describe your design problem:</label>
+                    <textarea id="problem" name="problem" rows="6" required placeholder="Example: I need to create a single instance of a class that should be globally accessible throughout my application..."></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn">
+                        <i class="fas fa-lightbulb"></i> Get Recommendations
+                    </button>
+                </div>
+            </form>
+            
+            <div class="examples">
+                <h3>Example Problems:</h3>
+                <ul>
+                    <li>"I need to add responsibilities to objects dynamically without affecting other objects."</li>
+                    <li>"I want to create a family of related objects without specifying their concrete classes."</li>
+                    <li>"I need to ensure a class has only one instance and provide a global point of access to it."</li>
+                </ul>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Design Pattern Recommendation System using SBERT with Reranking</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
