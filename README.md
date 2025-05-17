@@ -15,12 +15,12 @@ A web application that recommends software design patterns based on problem desc
    git clone https://github.com/Tahsin007/Design-Pattern-Recommendation-System.git
    cd Design-Pattern-Recommendation-System
    ```
-### Install The Dependencies
+2. Install The Dependencies
 
 ```bash
     pip install -r requirements.txt
 ```
-### Running the Application
+3. Running the Application
   ```bash
     python app.py
 ```
