@@ -15,18 +15,18 @@ A web application that recommends software design patterns based on problem desc
    git clone https://github.com/Tahsin007/Design-Pattern-Recommendation-System.git
    cd Design-Pattern-Recommendation-System
    ```
-## Install The Dependencies
+### Install The Dependencies
 
 ```bash
     pip install -r requirements.txt
 ```
-## Running the Application
+### Running the Application
   ```bash
     python app.py
 ```
 
-## Project Structure
-
+### Project Structure
+```tree
 design-pattern-recommender/
 ├── app.py                # Flask backend
 ├── model_utils.py        # Model loading and prediction functions
@@ -40,3 +40,4 @@ design-pattern-recommender/
 │       └── script.js     # Client-side JavaScript
 ├── requirements.txt      # Python dependencies
 └── README.md            # Setup instructions
+```
